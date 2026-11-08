@@ -34,7 +34,7 @@
   a { color: var(--accent); }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
   @media print {
-    html { font-size: 8.6pt; }
+    html { font-size: 8.4pt; }
     body { line-height: 1.38; }
     a { color: inherit; text-decoration: none; }
   }
