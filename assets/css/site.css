@@ -16,12 +16,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0f1615; --surface: #152120; --ink: #e3ebe9; --muted: #a2b1ad;
-    --rule: #2d3b39; --accent: #74cbbf; --accent-soft: #19302d; --chart-base: #557570; color-scheme: dark;
-  }
-}
+/* Light is the default for every visitor (user, 2026-11-08); dark only via the toggle button. */
 :root[data-theme="dark"] {
   --paper: #0f1615; --surface: #152120; --ink: #e3ebe9; --muted: #a2b1ad;
   --rule: #2d3b39; --accent: #74cbbf; --accent-soft: #19302d; --chart-base: #557570; color-scheme: dark;

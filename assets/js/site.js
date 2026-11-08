@@ -6,7 +6,7 @@
   function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function save(v) { try { localStorage.setItem(KEY, v); } catch (e) { /* private mode */ } }
   function current() {
-    return root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    return root.dataset.theme === "dark" ? "dark" : "light";   // light by default (user, 2026-11-08)
   }
 
   var s = stored();

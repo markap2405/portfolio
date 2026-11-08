@@ -63,5 +63,4 @@
   // measure tick labels with the real web font, not the fallback
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(draw);
   document.addEventListener("themechange", draw);
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
 })();
