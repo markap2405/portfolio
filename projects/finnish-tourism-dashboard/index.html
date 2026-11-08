@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finnish Tourism Dashboard – Marina Kapustina</title>
+  <meta name="description" content="A six-page Power BI report on tourism in Finland, built from open data with Power Query and DAX. Final assignment of the Excel ja BI course, Haaga-Helia.">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/tw.css">
+  <script src="../../assets/js/site.js"></script>
+</head>
+<body class="bg-paper text-ink font-sans">
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-surface focus:px-3 focus:py-2">Skip to content</a>
+
+  <header class="no-print border-b border-rule">
+    <nav class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-3 sm:px-8" aria-label="Main">
+      <a href="../../index.html" class="font-serif text-lg font-semibold text-ink no-underline">Marina Kapustina</a>
+      <div class="flex items-center gap-5 text-sm">
+        <a href="../../index.html" class="text-muted no-underline hover:text-ink">CV</a>
+        <a href="../index.html" aria-current="page" class="font-semibold text-ink underline decoration-accent decoration-2 underline-offset-[6px]">Projects</a>
+        <button type="button" data-theme-toggle hidden class="cursor-pointer rounded border border-rule px-2.5 py-1 text-muted hover:text-ink">
+          <span data-label>Dark mode</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" class="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-8 sm:pt-10">
+    <p class="text-sm"><a href="../index.html">All projects</a></p>
+
+    <header class="pb-5 pt-4">
+      <h1 class="font-serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Finnish Tourism Dashboard</h1>
+      <p class="mt-3 max-w-[65ch] text-lg text-muted">A six-page Power BI report on accommodation, passenger volumes, tourism consumption, demand and employment in Finland, built from open data for 2021–2025.</p>
+    </header>
+    <hr class="double-rule">
+
+    <figure class="mt-8">
+      <a href="img/02-accommodation.webp" class="block"><img src="img/02-accommodation.webp" width="1312" height="732" alt="Accommodation page of the Power BI report: a filled map of Finland and a column chart of accommodation revenue by region, KPI cards, two donut charts of leisure and business nights, and a year slicer." class="w-full rounded border border-rule"></a>
+      <figcaption class="mt-2 text-sm text-muted">The Accommodation page, captured from the .pbix file in Power BI Desktop. Select any image to open it at full size.</figcaption>
+    </figure>
+
+    <dl class="mt-8 grid gap-x-8 gap-y-4 border-y border-rule py-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div><dt class="text-sm text-muted">Year and context</dt><dd class="mt-0.5 font-semibold">2026, final assignment of the Excel ja BI course, Haaga-Helia</dd></div>
+      <div><dt class="text-sm text-muted">Tools</dt><dd class="mt-0.5 font-semibold">Power BI Desktop, Power Query, DAX</dd></div>
+      <div><dt class="text-sm text-muted">Data</dt><dd class="mt-0.5 font-semibold">Visit Finland and Statistics Finland open data, 2021–2025</dd></div>
+      <div><dt class="text-sm text-muted">Output</dt><dd class="mt-0.5 font-semibold">Cover page, four topic pages and a key-takeaways page</dd></div>
+    </dl>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_18rem]">
+      <div class="max-w-[70ch] space-y-10">
+        <section aria-labelledby="h-brief">
+          <h2 id="h-brief" class="mb-3 border-b border-rule pb-1 font-serif text-2xl font-semibold">The brief</h2>
+          <p>The course set a fictional scenario: a group of tourism entrepreneurs from South America is visiting Finland for the first time and wants an overview of travel and tourism in the country. Working as a data analyst for a travel company, the task was to build an engaging Power BI presentation from open data no older than 2021.</p>
+          <p class="mt-3">Minimum requirements: combine at least three data files, write at least three DAX measures, and deliver a cover page plus four report pages.</p>
+        </section>
+
+        <section aria-labelledby="h-process">
+          <h2 id="h-process" class="mb-4 border-b border-rule pb-1 font-serif text-2xl font-semibold">How the report was built</h2>
+          <ol class="relative space-y-5 border-l-2 border-accent pl-6">
+            <li><h3 class="font-semibold">Collect open data</h3><p class="text-muted">Tables on accommodation revenue by region, passengers, trips and carbon footprint, tourism consumption and supply, demand, GDP and employment, downloaded from Visit Finland and Statistics Finland.</p></li>
+            <li><h3 class="font-semibold">Load and shape the tables</h3><p class="text-muted">Import into Power BI and add helper year and quarter tables, so that one slicer can filter several sources.</p></li>
+            <li><h3 class="font-semibold">Model and measure</h3><p class="text-muted">A data model of more than 15 tables with relationships, plus custom DAX measures (the brief asked for at least three).</p></li>
+            <li><h3 class="font-semibold">Design the story</h3><p class="text-muted">A cover page with navigation buttons, four topic pages with slicers, maps, KPI cards and charts, and a closing page of written takeaways.</p></li>
+          </ol>
+        </section>
+      </div>
+
+      <aside aria-labelledby="h-skills" class="lg:pt-1">
+        <h2 id="h-skills" class="mb-3 font-serif text-xl font-semibold">Skills shown</h2>
+        <ul class="space-y-1.5 text-sm">
+          <li>Combining several open-data sources</li>
+                    <li>Data modelling and relationships</li>
+          <li>DAX measures</li>
+          <li>Filled map, combo, donut and bar charts</li>
+          <li>Slicers, KPI cards, page navigation</li>
+          <li>Writing findings for a non-specialist audience</li>
+        </ul>
+        <p class="mt-5 text-sm text-muted">The .pbix file is available on request.</p>
+      </aside>
+    </div>
+
+    <section aria-labelledby="h-pages" class="mt-14">
+      <h2 id="h-pages" class="mb-5 border-b border-rule pb-1 font-serif text-2xl font-semibold">Report pages</h2>
+      <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
+        <figure>
+          <a href="img/01-cover.webp" class="block"><img src="img/01-cover.webp" width="1312" height="732" loading="lazy" alt="Cover page titled Tourism Analysis in Finland, Marina Kapustina, 2021–2025, with four navigation buttons over a lake landscape." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Cover.</span> <span class="text-muted">Title, data sources and buttons that jump to each topic page.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/03-passenger-volumes.webp" class="block"><img src="img/03-passenger-volumes.webp" width="1312" height="732" loading="lazy" alt="Passenger volumes page: average trip length by country, KPI cards for trips, passengers and carbon footprint, airplane versus ship or ferry by quarter, and passengers by age group." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Passenger volumes.</span> <span class="text-muted">Trip length by country, airplane vs. ship/ferry by quarter, passengers by age group, with gender and quarter slicers.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/04-consumption.webp" class="block"><img src="img/04-consumption.webp" width="1312" height="732" loading="lazy" alt="Consumption statistics page: domestic supply versus internal tourism consumption by product, domestic versus foreign visitors by product, and KPI cards." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Consumption statistics.</span> <span class="text-muted">Supply vs. tourism consumption and domestic vs. foreign visitors by product, with the tourism share of supply.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/05-demand-workforce.webp" class="block"><img src="img/05-demand-workforce.webp" width="1312" height="732" loading="lazy" alt="Demand and workforce page: domestic and inbound demand share by year, travel spending abroad by country, and a combo chart of tourism employment and value added by year." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Demand &amp; workforce.</span> <span class="text-muted">Domestic vs. inbound demand, debit (travel spending abroad) by country, and a combo chart of employment and value added by year.</span></figcaption>
+        </figure>
+        <figure class="md:col-span-2">
+          <a href="img/06-key-takeaways.webp" class="block"><img src="img/06-key-takeaways.webp" width="1312" height="732" loading="lazy" alt="Key takeaways page with written findings for accommodation, passenger volumes, consumption, and demand and workforce, next to KPI cards." class="w-full rounded border border-rule md:mx-auto md:w-3/4"></a>
+          <figcaption class="mt-2 text-sm md:mx-auto md:w-3/4"><span class="font-semibold">Key takeaways.</span> <span class="text-muted">The findings in plain words, quoted below.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-findings" class="mt-14 max-w-[70ch]">
+      <h2 id="h-findings" class="mb-2 border-b border-rule pb-1 font-serif text-2xl font-semibold">Findings</h2>
+      <p class="mb-5 text-sm text-muted">Quoted from the report's key-takeaways page.</p>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold">Accommodation</h3>
+          <ul class="mt-1.5 list-disc space-y-1 pl-5 marker:text-accent">
+            <li>Finland’s accommodation sector is highly concentrated in Uusimaa and Lapland.</li>
+            <li>Leisure travel dominates both foreign and domestic nights.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold">Passenger volumes</h3>
+          <ul class="mt-1.5 list-disc space-y-1 pl-5 marker:text-accent">
+            <li>Spain shows the highest average trip length among all countries, however, Estonia and Sweden take trips the most frequently.</li>
+            <li>Travel activity peaks in Q3 and Q4, reflecting strong summer and holiday seasons.</li>
+            <li>The 25–44 and 45–64 groups make up the majority of all travelers.</li>
+            <li>Airplane travel consistently exceeds ship/ferry across all quarters.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold">Consumption</h3>
+          <ul class="mt-1.5 list-disc space-y-1 pl-5 marker:text-accent">
+            <li>In every product category (accommodation, transport, cultural services, sports, food &amp; beverage, and travel agencies) foreign visitors exceed domestic visitors.</li>
+            <li>Domestic supply significantly exceeds internal tourism consumption across all product categories, with the largest gap seen in food and beverage services.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold">Demand &amp; workforce</h3>
+          <ul class="mt-1.5 list-disc space-y-1 pl-5 marker:text-accent">
+            <li>Domestic tourism dominates overall demand.</li>
+            <li>Spain stands out with the largest debit amount, far exceeding all other countries.</li>
+            <li>Employment in tourism-related industries rises each year, increasing from roughly 50K to nearly 70K.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <nav aria-label="More projects" class="mt-16 flex flex-wrap justify-between gap-4 border-t border-rule pt-5 text-sm">
+      <a href="../iuiga-management-reporting/index.html">Previous: IUIGA Financial Overview</a>
+      <a href="../sales-summary-ceo/index.html">Next: Sales Summary for the CEO</a>
+    </nav>
+  </main>
+
+  <footer class="no-print border-t border-rule">
+    <div class="mx-auto flex max-w-5xl flex-wrap justify-between gap-x-6 gap-y-1 px-4 py-6 text-sm text-muted sm:px-8">
+      <p>© <span data-year>2026</span> Marina Kapustina, Helsinki</p>
+      <p><a href="../../index.html" class="text-muted">Back to CV</a></p>
+    </div>
+  </footer>
+</body>
+</html>

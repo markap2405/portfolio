@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Summary for the CEO – Marina Kapustina</title>
+  <meta name="description" content="An Excel sales summary for a CEO, built with Power Query, the Excel Data Model, PivotTables, slicers and a map chart. Course simulation task, Excel ja BI course, Haaga-Helia.">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/tw.css">
+  <script src="../../assets/js/site.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script src="../../assets/js/charts.js" defer></script>
+</head>
+<body class="bg-paper text-ink font-sans">
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-surface focus:px-3 focus:py-2">Skip to content</a>
+
+  <header class="no-print border-b border-rule">
+    <nav class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-3 sm:px-8" aria-label="Main">
+      <a href="../../index.html" class="font-serif text-lg font-semibold text-ink no-underline">Marina Kapustina</a>
+      <div class="flex items-center gap-5 text-sm">
+        <a href="../../index.html" class="text-muted no-underline hover:text-ink">CV</a>
+        <a href="../index.html" aria-current="page" class="font-semibold text-ink underline decoration-accent decoration-2 underline-offset-[6px]">Projects</a>
+        <button type="button" data-theme-toggle hidden class="cursor-pointer rounded border border-rule px-2.5 py-1 text-muted hover:text-ink">
+          <span data-label>Dark mode</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" class="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-8 sm:pt-10">
+    <p class="text-sm"><a href="../index.html">All projects</a></p>
+
+    <header class="pb-5 pt-4">
+      <h1 class="font-serif text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Sales Summary for the CEO</h1>
+      <p class="mt-3 max-w-[65ch] text-lg text-muted">An Excel workbook that turns eight months of order data into a short, visual summary for management: where sales came from, who sold best and which product categories lag.</p>
+    </header>
+    <hr class="double-rule">
+
+    <dl class="mt-8 grid gap-x-8 gap-y-4 border-b border-rule pb-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div><dt class="text-sm text-muted">Year and context</dt><dd class="mt-0.5 font-semibold">2026, course simulation task, Excel ja BI course, Haaga-Helia</dd></div>
+      <div><dt class="text-sm text-muted">Tools</dt><dd class="mt-0.5 font-semibold">Excel: Power Query, Data Model, PivotTables, slicers, map chart</dd></div>
+      <div><dt class="text-sm text-muted">Data</dt><dd class="mt-0.5 font-semibold">Fictional orders, May–Dec 2025: 20 municipalities, 11 counties, 22 salespeople</dd></div>
+      <div><dt class="text-sm text-muted">Output</dt><dd class="mt-0.5 font-semibold">6 PivotTables, 5 charts, slicers and written key observations</dd></div>
+    </dl>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_18rem]">
+      <div class="max-w-[70ch] space-y-10">
+        <section aria-labelledby="h-brief">
+          <h2 id="h-brief" class="mb-3 border-b border-rule pb-1 font-serif text-2xl font-semibold">The brief</h2>
+          <p>In this course simulation, a fictional company sold food and drink products in Sweden between May and December 2025. The CEO wanted a brief, easy-to-read summary of the results: where the most sales happened, which salespeople performed best and which product categories could be improved.</p>
+          <p class="mt-3">The workbook had to include PivotTables and charts, a map, an Excel Data Model and a short written analysis. Source material: an orders workbook, a salespeople workbook and the list of Swedish municipalities.</p>
+        </section>
+
+        <section aria-labelledby="h-process">
+          <h2 id="h-process" class="mb-4 border-b border-rule pb-1 font-serif text-2xl font-semibold">How the workbook was built</h2>
+          <ol class="space-y-5 border-l-2 border-accent pl-6">
+            <li><h3 class="font-semibold">Combine the sources</h3><p class="text-muted">Orders, salespeople and municipalities brought together with Power Query and related in the Excel Data Model, so each order carries its county and salesperson.</p></li>
+            <li><h3 class="font-semibold">Analyse with PivotTables</h3><p class="text-muted">Six PivotTables: sales by month, purchases by municipality, a purchase index by county (purchases relative to population), price per county, average unit price per salesperson, and quantity and sales by category.</p></li>
+            <li><h3 class="font-semibold">Visualise</h3><p class="text-muted">A monthly sales line chart, bar charts, a combo chart, a filled map of Sweden by county, and slicers for month, category and county.</p></li>
+            <li><h3 class="font-semibold">Write it up</h3><p class="text-muted">A key-observations sheet that answers the CEO's questions in a few sentences.</p></li>
+          </ol>
+        </section>
+      </div>
+
+      <aside aria-labelledby="h-skills" class="lg:pt-1">
+        <h2 id="h-skills" class="mb-3 font-serif text-xl font-semibold">Skills shown</h2>
+        <ul class="space-y-1.5 text-sm">
+          <li>Power Query and the Excel Data Model</li>
+          <li>PivotTables and pivot charts</li>
+          <li>Slicers for interactive filtering</li>
+          <li>Map chart of Swedish counties</li>
+          <li>Calculated indicators (purchase index)</li>
+          <li>Short written analysis for management</li>
+        </ul>
+        <p class="mt-5 text-sm text-muted">The workbook is available on request.</p>
+      </aside>
+    </div>
+
+    <section aria-labelledby="h-numbers" class="mt-14">
+      <h2 id="h-numbers" class="mb-2 border-b border-rule pb-1 font-serif text-2xl font-semibold">The numbers at a glance</h2>
+      <p class="mb-6 text-sm text-muted">Redrawn from the workbook's PivotTables (fictional course data, euros). Hover or tap a bar for its value.</p>
+      <div class="grid gap-10 md:grid-cols-2">
+        <figure>
+          <figcaption class="mb-2 font-semibold">Sales by month, May–Dec 2025</figcaption>
+          <div class="relative h-72"><canvas data-chart="monthly" role="img" aria-label="Column chart of monthly sales. October is highest at 246,540 euros; May is lowest at 71,164 euros."></canvas></div>
+          <details class="mt-3 text-sm">
+            <summary class="cursor-pointer text-muted">Show data</summary>
+            <table class="mt-2 w-full text-left tabular-nums">
+              <thead><tr class="border-b border-rule"><th class="py-1 font-semibold">Month</th><th class="py-1 text-right font-semibold">Sales (€)</th></tr></thead>
+              <tbody data-table="monthly"></tbody>
+            </table>
+          </details>
+        </figure>
+        <figure>
+          <figcaption class="mb-2 font-semibold">Top 10 municipalities by purchases</figcaption>
+          <div class="relative h-72"><canvas data-chart="municipalities" role="img" aria-label="Bar chart of the ten municipalities with the highest purchases. Flen is first with 138,684 euros, followed by Sunne and Huddinge."></canvas></div>
+          <details class="mt-3 text-sm">
+            <summary class="cursor-pointer text-muted">Show data</summary>
+            <table class="mt-2 w-full text-left tabular-nums">
+              <thead><tr class="border-b border-rule"><th class="py-1 font-semibold">Municipality</th><th class="py-1 text-right font-semibold">Purchases (€)</th></tr></thead>
+              <tbody data-table="municipalities"></tbody>
+            </table>
+          </details>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-sheets" class="mt-14">
+      <h2 id="h-sheets" class="mb-2 border-b border-rule pb-1 font-serif text-2xl font-semibold">The workbook</h2>
+      <p class="mb-6 text-sm text-muted">Each sheet exported as an image from the original workbook. Select any image to open it at full size.</p>
+      <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
+        <figure>
+          <a href="img/01-total-sales.webp" class="block"><img src="img/01-total-sales.webp" width="920" height="410" loading="lazy" alt="Total Sales sheet: PivotTable of sales by month from May to December with a line chart peaking in October." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Total sales.</span> <span class="text-muted">Monthly sales with a line chart; October stands out.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/02-purchases-by-municipality.webp" class="block"><img src="img/02-purchases-by-municipality.webp" width="924" height="578" loading="lazy" alt="Purchases by municipality: PivotTable of total purchases, cargo and net price for 20 municipalities, with month and category slicers." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Purchases by municipality.</span> <span class="text-muted">Total purchases, cargo and net price, filtered with month and category slicers.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/04-price-per-county-map.webp" class="block"><img src="img/04-price-per-county-map.webp" width="1059" height="727" loading="lazy" alt="Price per county: PivotTable and a filled map of Sweden shaded by sales per county." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Price per county.</span> <span class="text-muted">A filled map of Sweden shaded by sales per county.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/03-purchase-index.webp" class="block"><img src="img/03-purchase-index.webp" width="1197" height="646" loading="lazy" alt="Purchase index sheet: purchases, population and purchase index per county with a bar chart, highlighting Kalmar, Södermanland and Västra Götaland counties." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Purchase index.</span> <span class="text-muted">Purchases relative to population per county; the three highest counties are called out.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/05-salespersons.webp" class="block"><img src="img/05-salespersons.webp" width="1052" height="626" loading="lazy" alt="Salespersons sheet: average unit price per salesperson in a PivotTable and bar chart, with the top three named." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Salespersons.</span> <span class="text-muted">Average unit price per salesperson, with the top three named.</span></figcaption>
+        </figure>
+        <figure>
+          <a href="img/06-categories.webp" class="block"><img src="img/06-categories.webp" width="1195" height="700" loading="lazy" alt="Categories sheet: quantity and sales by county and product category in a PivotTable and combo chart, with month and county slicers." class="w-full rounded border border-rule"></a>
+          <figcaption class="mt-2 text-sm"><span class="font-semibold">Categories.</span> <span class="text-muted">Quantity and sales by county and category in a combo chart, with month and county slicers.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-findings" class="mt-14 max-w-[70ch]">
+      <h2 id="h-findings" class="mb-2 border-b border-rule pb-1 font-serif text-2xl font-semibold">Key observations</h2>
+      <p class="mb-5 text-sm text-muted">Quoted from the workbook's key-observations sheet.</p>
+      <ul class="list-disc space-y-2 pl-5 marker:text-accent">
+        <li>October had the highest sales (246,540.42€), while May had the lowest (71,164.39€).</li>
+        <li>Norrbotten County shows the weakest performance. The region purchased exclusively spices and milk products and all of these transactions occurred solely in May.</li>
+        <li>The largest sales volumes come from beverages, fish products, and milk products. However, when looking at profitability, the top‑earning categories shift to beverages, milk products, and meat.</li>
+        <li>Flen Municipality is the largest contributor to total revenue, generating 138,683.52€, while Jokkmokk Municipality contributes the least, with only 893.75€ in sales. The difference is more than 155x.</li>
+      </ul>
+    </section>
+
+    <nav aria-label="More projects" class="mt-16 flex flex-wrap justify-between gap-4 border-t border-rule pt-5 text-sm">
+      <a href="../finnish-tourism-dashboard/index.html">Previous: Finnish Tourism Dashboard</a>
+      <a href="../index.html">All projects</a>
+    </nav>
+  </main>
+
+  <footer class="no-print border-t border-rule">
+    <div class="mx-auto flex max-w-5xl flex-wrap justify-between gap-x-6 gap-y-1 px-4 py-6 text-sm text-muted sm:px-8">
+      <p>© <span data-year>2026</span> Marina Kapustina, Helsinki</p>
+      <p><a href="../../index.html" class="text-muted">Back to CV</a></p>
+    </div>
+  </footer>
+  <!-- Chart data: copied from the PivotTables in "A7. Excel Collection_Kapustina.xlsx" (sheets Total Sales, Purchases by Municipality). -->
+  <script type="application/json" id="chart-data">{"monthly": {"type": "bar", "label": "Sales (€)", "labels": ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "values": [71164.39, 87945.14, 93227.56, 79742.41, 108676.76, 246540.42, 106204.18, 84294.24], "highlight": 5}, "municipalities": {"type": "bar", "horizontal": true, "label": "Purchases (€)", "labels": ["Flen", "Sunne", "Huddinge", "Högsby", "Färgelanda", "Åsele", "Vimmerby", "Östhammar", "Falun", "Åmål"], "values": [138683.52, 88801.19, 64255.21, 61567.99, 58342.08, 55289.63, 52829.7, 50175.21, 49346.11, 48038.93], "highlight": 0}}</script>
+</body>
+</html>

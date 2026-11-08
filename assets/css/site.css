@@ -1,0 +1,79 @@
+/* Design tokens + base + print for the whole site.
+   Tailwind (browser CDN) maps these in each page via @theme inline; this file also keeps
+   pages readable if the CDN is unavailable. Rules: .claude/rules/web-design.md */
+
+:root {
+  --paper: #f6f8f7;      /* cool off-white page */
+  --surface: #ffffff;    /* raised areas */
+  --ink: #17211f;        /* body text */
+  --muted: #4f5d59;      /* dates, secondary text (7.0:1 on paper) */
+  --rule: #c9d3d0;       /* hairlines */
+  --accent: #0b5d55;     /* ledger green: links, double rule (7.4:1 on paper) */
+  --accent-soft: #e2eeeb;
+  --chart-base: #6d8f89;  /* non-highlighted chart bars (3.4:1 on paper) */
+  --ff-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --ff-sans: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1615; --surface: #152120; --ink: #e3ebe9; --muted: #a2b1ad;
+    --rule: #2d3b39; --accent: #74cbbf; --accent-soft: #19302d; --chart-base: #557570; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1615; --surface: #152120; --ink: #e3ebe9; --muted: #a2b1ad;
+  --rule: #2d3b39; --accent: #74cbbf; --accent-soft: #19302d; --chart-base: #557570; color-scheme: dark;
+}
+
+/* Element rules live in @layer base so Tailwind utilities (layer "utilities") always win. */
+@layer base {
+  html { background: var(--paper); color: var(--ink); font-family: var(--ff-sans); }
+  body { margin: 0; background: var(--paper); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  @media print {
+    html { font-size: 8.6pt; }
+    body { line-height: 1.38; }
+    a { color: inherit; text-decoration: none; }
+  }
+}
+
+/* The one memorable device: the accountant's double rule ("bottom line") under the header. */
+.double-rule { border: 0; height: 5px; margin: 0;
+  border-top: 2px solid var(--accent); border-bottom: 1px solid var(--accent); }
+
+/* Ledger rows: date column + entry. Used on CV and projects pages. */
+:root { --date-col: 8.5rem; }
+.ledger-date { font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media print { :root { --date-col: 6.8rem; } }
+
+/* Pipe-separated inline lists (strengths, contact, languages), as in the Word CV.
+   Every item gets a leading separator; the list is shifted left by one separator width and
+   clipped, so separators that land at the start of a wrapped line are hidden. */
+.pipe-list { --sep: 1.3rem; display: flex; flex-wrap: wrap; row-gap: 0.15rem; padding: 0;
+  margin: 0 0 0 calc(var(--sep) * -1); list-style: none; clip-path: inset(0 0 0 var(--sep)); }
+/* Hanging indent: if an item wraps inside itself, its next line starts after the hidden column. */
+.pipe-list > li { padding-left: var(--sep); text-indent: calc(var(--sep) * -1); }
+.pipe-list > li::before { content: "|"; display: inline-block; width: var(--sep); text-indent: 0;
+  text-align: center; color: var(--muted); opacity: 0.55; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------------------------------------------------------------- print: 2-page A4 CV */
+@page { size: A4; margin: 13mm 15mm 12mm; }
+@media print {
+  /* :not(#x) raises specificity above the dark-mode token rules. */
+  :root:not(#print-tokens) {
+    --paper: #fff; --surface: #fff; --ink: #000; --muted: #444; --rule: #999;
+    --accent: #000; --accent-soft: #fff; color-scheme: light;
+  }
+  .no-print { display: none !important; }
+  .print-break { break-before: page; }
+  section, li, .ledger-row { break-inside: avoid; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }
